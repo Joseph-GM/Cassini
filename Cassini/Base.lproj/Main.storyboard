@@ -34,7 +34,7 @@
                                             </attributedString>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="PR0-oQ-7AD" kind="showDetail" identifier="Cassini" id="p1f-98-xlP"/>
+                                            <segue destination="yLq-Kz-sAt" kind="showDetail" identifier="Cassini" id="p1f-98-xlP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqq-C6-dga">
@@ -51,7 +51,7 @@
                                             </attributedString>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="PR0-oQ-7AD" kind="showDetail" identifier="Earth" id="Xr1-6U-0Be"/>
+                                            <segue destination="yLq-Kz-sAt" kind="showDetail" identifier="Earth" id="Xr1-6U-0Be"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1s-TG-ajq">
@@ -68,7 +68,7 @@
                                             </attributedString>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="PR0-oQ-7AD" kind="showDetail" identifier="Saturn" id="maQ-aO-p86"/>
+                                            <segue destination="yLq-Kz-sAt" kind="showDetail" identifier="Saturn" id="maQ-aO-p86"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -100,23 +100,31 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="9Dc-wD-1ge"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="tHC-gQ-m34"/>
                             </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="51R-jc-4TF">
+                                <rect key="frame" x="188.5" y="456.5" width="37" height="37"/>
+                                <color key="color" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tmS-lM-r6i"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="T2d-BV-cIK" firstAttribute="trailing" secondItem="I9A-AC-MSe" secondAttribute="trailing" id="0eP-mx-Yvy"/>
+                            <constraint firstItem="51R-jc-4TF" firstAttribute="centerX" secondItem="tmS-lM-r6i" secondAttribute="centerX" id="9eC-HE-zLB"/>
                             <constraint firstItem="T2d-BV-cIK" firstAttribute="leading" secondItem="I9A-AC-MSe" secondAttribute="leading" id="Cfe-Xa-PKf"/>
                             <constraint firstAttribute="bottom" secondItem="T2d-BV-cIK" secondAttribute="bottom" id="HgR-12-1uW"/>
                             <constraint firstItem="T2d-BV-cIK" firstAttribute="top" secondItem="I9A-AC-MSe" secondAttribute="top" id="flt-EG-QvZ"/>
+                            <constraint firstItem="51R-jc-4TF" firstAttribute="centerY" secondItem="tmS-lM-r6i" secondAttribute="centerY" id="jaR-Oe-28T"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="rze-OA-fcw"/>
                     <connections>
                         <outlet property="scrollView" destination="T2d-BV-cIK" id="Mww-yr-XcU"/>
+                        <outlet property="spinner" destination="51R-jc-4TF" id="Hy7-dA-lXe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o8t-hc-9SG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-197" y="841"/>
+            <point key="canvasLocation" x="713.04347826086962" y="840.40178571428567"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="RmY-3f-CFl">
@@ -124,7 +132,7 @@
                 <splitViewController allowDoubleColumnStyle="YES" id="zei-Iv-mWs" sceneMemberID="viewController">
                     <connections>
                         <segue destination="TdD-JO-Cqm" kind="relationship" relationship="masterViewController" id="UqQ-Hi-Oh0"/>
-                        <segue destination="PR0-oQ-7AD" kind="relationship" relationship="detailViewController" id="EA2-37-z1x"/>
+                        <segue destination="yLq-Kz-sAt" kind="relationship" relationship="detailViewController" id="EA2-37-z1x"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOv-cP-tM0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -149,9 +157,27 @@
             </objects>
             <point key="canvasLocation" x="-1107.2463768115942" y="72.991071428571431"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cBU-DV-ex9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yLq-Kz-sAt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z9z-fB-1ai">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PR0-oQ-7AD" kind="relationship" relationship="rootViewController" id="z3U-y0-n8l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k5D-fJ-Qgs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-197.10144927536234" y="840.40178571428567"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="maQ-aO-p86"/>
+        <segue reference="p1f-98-xlP"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
